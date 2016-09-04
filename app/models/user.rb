@@ -28,7 +28,8 @@ class User < ActiveRecord::Base
 
   has_secure_password
   validates :password,  presence: true,
-                        length: { minimum: 6 }
+                        length: { minimum: 6 },
+                        allow_nil: true
 
   # 与えられた文字列のハッシュ値を返す
   def self.digest(string)
