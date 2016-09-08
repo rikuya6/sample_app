@@ -23,6 +23,7 @@ class User < ActiveRecord::Base
 
   attr_accessor :remember_token, :activation_token, :reset_token
 
+  has_many :microposts, dependent: :destroy
 
   validates :name,      presence: true,
                         length: { maximum: 50 }

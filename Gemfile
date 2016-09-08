@@ -21,6 +21,7 @@ group :development, :test do
   gem 'web-console'
   gem 'spring'
   gem 'guard'
+  gem 'rails-erd'
 end
 
 group :test do
