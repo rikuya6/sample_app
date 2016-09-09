@@ -91,6 +91,10 @@ class User < ActiveRecord::Base
     UserMailer.password_reset(self).deliver_now
   end
 
+  def feed
+    Micropost.where("user_id = ?", id)
+  end
+
   private
     def downcase_email
       self.email = email.downcase
