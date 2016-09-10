@@ -14,6 +14,9 @@ gem 'puma'
 gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
 
 group :development, :test do
   gem 'sqlite3'
@@ -21,6 +24,7 @@ group :development, :test do
   gem 'web-console'
   gem 'spring'
   gem 'guard'
+  gem 'rails-erd'
 end
 
 group :test do

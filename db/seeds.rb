@@ -1,5 +1,4 @@
-puts "Creating User..."
-
+print 'Creating User...'
 User.create!(
   name: 'rikuya',
   email: 'rikuya@test.com',
@@ -21,3 +20,12 @@ User.create!(
     activated: true,
     activated_at: Time.zone.now)
 end
+puts 'end'
+
+print 'Creating Micropost...'
+users = User.order(:created_at).take(6)
+50.times do
+  content = Faker::Lorem.sentence(5)
+  users.each { |user| user.microposts.create!(content: content) }
+end
+puts 'end'
