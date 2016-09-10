@@ -14,10 +14,13 @@ class Micropost < ActiveRecord::Base
 
   mount_uploader :picture, PictureUploader
 
+  # 関連
   belongs_to :user
 
+  # スコープ
   default_scope -> { order(created_at: :desc) }
 
+  # バリデーション
   validates :user_id, presence: true
 
   validates :content, #presence: true,
